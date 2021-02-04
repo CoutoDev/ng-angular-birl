@@ -1,0 +1,28 @@
+<div>
+    <div>Exercício: <input [(ngModel)]="exercise.name"/></div>
+    <div>Duração: <input type="number" [(ngModel)]="exercise.duration"></div>
+    <div>Repetições: <input type="number" [(ngModel)]="exercise.repetition"></div>
+    <div>Preparação: <input type="number" [(ngModel)]="exercise.preparation"></div>
+    <div>Descanso: <input type="number" [(ngModel)]="exercise.rest"></div>
+    <button (click)="add()">Adicionar</button>
+</div>
+
+<table>
+    <tr>
+        <th>Exercício</th>
+        <th>Duração</th>
+        <th>Repetições</th>
+        <th>Preparação</th>
+        <th>Descanso</th>
+    </tr>
+    <tr *ngFor="let item of exercises; let i = index">
+        <td>{{item.name}}</td>
+        <td>{{item.duration}}</td>
+        <td>{{item.repetition}}</td>
+        <td>{{item.preparation}}</td>
+        <td>{{item.rest}}</td>
+        <td>
+            <button (click)="delete(i)">x</button>
+        </td>
+    </tr>
+</table>
